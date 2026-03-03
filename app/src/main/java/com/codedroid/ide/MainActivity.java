@@ -8,7 +8,6 @@ import android.text.SpannableString; import android.text.style.ForegroundColorSp
 import android.view.KeyEvent; import android.view.View; import android.view.ViewGroup;
 import android.widget.*; import java.io.*; import java.nio.file.Files; import java.util.*;
 
-import io.github.rosemoe.sora.langs.textmate.TextMateLanguage;
 import io.github.rosemoe.sora.widget.CodeEditor;
 import com.codedroid.ide.editor.EditorTheme;
 import com.codedroid.ide.project.*; import com.codedroid.ide.runner.*;
@@ -144,16 +143,11 @@ public class MainActivity extends Activity {
         catch(Exception e){toast("Save failed");}
     }
 
-    private void setLang(String n){
-        String ex=n.contains(".")?n.substring(n.lastIndexOf('.')+1):"";
-        try{ switch(ex){
-            case"py": codeEditor.setEditorLanguage(TextMateLanguage.create("source.python",true)); break;
-            case"lua":codeEditor.setEditorLanguage(TextMateLanguage.create("source.lua",true));    break;
-            case"c":  codeEditor.setEditorLanguage(TextMateLanguage.create("source.c",true));      break;
-            case"sh": codeEditor.setEditorLanguage(TextMateLanguage.create("source.shell",true));  break;
-            default:  codeEditor.setEditorLanguage(null);
-        }}catch(Exception ignored){}
-    }
+
+private void setLang(String n) {
+    // language-textmate removed, syntax highlight disabled
+    codeEditor.setEditorLanguage(null);
+}
 
     private void refreshTabs(){
         fileTabs.removeAllViews();
