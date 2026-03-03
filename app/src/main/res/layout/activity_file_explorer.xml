@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/bg">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="50dp"
+        android:background="@color/surface" android:orientation="horizontal"
+        android:gravity="center_vertical" android:paddingStart="4dp" android:paddingEnd="10dp" android:elevation="4dp">
+        <TextView android:id="@+id/btnBack" android:layout_width="44dp" android:layout_height="44dp"
+            android:text="←" android:textSize="20sp" android:textColor="@color/muted" android:gravity="center"
+            android:clickable="true" android:focusable="true"/>
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Files" android:textColor="@color/text" android:textSize="16sp" android:textStyle="bold"/>
+            <TextView android:id="@+id/tvCurrentPath" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textColor="@color/muted"
+                android:textSize="10sp" android:maxLines="1" android:ellipsize="start"/>
+        </LinearLayout>
+        <TextView android:id="@+id/btnNewFile" android:layout_width="32dp" android:layout_height="32dp"
+            android:text="+" android:textSize="22sp" android:textColor="@color/accent"
+            android:gravity="center" android:layout_marginEnd="4dp" android:clickable="true" android:focusable="true"/>
+        <TextView android:id="@+id/btnNewFolder" android:layout_width="32dp" android:layout_height="32dp"
+            android:text="📁" android:textSize="16sp" android:gravity="center"
+            android:clickable="true" android:focusable="true"/>
+    </LinearLayout>
+    <ListView android:id="@+id/fileList" android:layout_width="match_parent" android:layout_height="match_parent"
+        android:divider="#0D1020" android:dividerHeight="1dp" android:background="@color/bg"/>
+</LinearLayout>

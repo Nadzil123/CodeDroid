@@ -1,0 +1,36 @@
+plugins {
+    id 'com.android.application'
+}
+android {
+    namespace "com.codedroid.ide"
+    compileSdk 34
+    defaultConfig {
+        applicationId "com.codedroid.ide"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release { minifyEnabled false }
+        debug   { debuggable true }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    packagingOptions {
+        resources.excludes += ['META-INF/LICENSE*', 'META-INF/NOTICE*']
+    }
+}
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core:1.12.0'
+    implementation 'com.google.android.material:material:1.11.0'
+    // Sora Code Editor — syntax highlight + autocomplete
+    implementation 'io.github.Rosemoe.sora-editor:editor:0.23.4'
+    implementation 'io.github.Rosemoe.sora-editor:language-textmate:0.23.4'
+    // Lua interpreter — pure Java, zero install needed
+    implementation 'org.luaj:luaj-jse:3.0.1'
+    implementation 'androidx.documentfile:documentfile:1.0.1'
+}
