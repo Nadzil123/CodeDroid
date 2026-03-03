@@ -24,8 +24,7 @@ public class CRunner implements CodeRunner {
                     String l; while((l=r.readLine())!=null) cb.onError(l);
                 }
                 if (cp.waitFor() != 0) { cb.onError("Compile failed."); cb.onFinish(1); return; }
-                cb.onOutput("Compiled OK!
-");
+                cb.onOutput("Compiled OK!");
                 bin.setExecutable(true);
                 Process run = new ProcessBuilder(bin.getAbsolutePath())
                     .directory(src.getParentFile()).redirectErrorStream(false).start();
