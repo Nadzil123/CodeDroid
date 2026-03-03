@@ -59,7 +59,7 @@ public class ProjectManager {
     }
 
     private String ext(String l){switch(l){case"python":return"py";case"lua":return"lua";case"c":return"c";default:return"sh";}}
-    private String sanitize(String s){return s.replaceAll("[^a-zA-Z0-9_\-]","_");}
+    private String sanitize(String s){return s.replaceAll("[^a-zA-Z0-9_\\-]","_");}
     private void save(File f,String s)throws Exception{try(FileWriter w=new FileWriter(f)){w.write(s);}}
     private String read(File f)throws Exception{return new String(java.nio.file.Files.readAllBytes(f.toPath()));}
     private String template(String n,String l){switch(l){
